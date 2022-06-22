@@ -19,6 +19,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
+    <script lang="JavaScript">
+        function badLog() {
+            alert("Wrong Credentials");
+        }
+    </script>
     <body>
         <form action="goodLogin.jsp">
         <h1>MASS</h1>
@@ -29,6 +35,8 @@
 
         <br>
         <br>
+        
+
 
         <input type="submit" value="Login" id="logButton" name="userLogin"> 
         </form>

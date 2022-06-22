@@ -21,16 +21,13 @@
     <%!
             public Boolean test(String a, String b) { 
             String log = null;
-            Boolean fun = false;
-            fun = Login.checkUser(a, b);
-                if (fun == true) {
-                    log = "You got it";
+            Boolean check = false;
+            Boolean re = false;
+            check = Login.checkUser(a, b);
+                if (check == true) {
+                    re = true;
                 }
-                else {
-                    log = "You don't got it";
-                }
-                //Login.setUser(fun);
-                return fun;
+                return re;
             }    
         %>
         
@@ -40,12 +37,13 @@
       String b = request.getParameter("username");
       String c = request.getParameter("password");
     %>
+    <!-- Old script for badLogin functionality
     <script lang="JavaScript">
         function badLog() {
             alert("Wrong Credentials");
         }
     </script>
-        
+    -->    
     <body>
         
         <% 
@@ -54,18 +52,15 @@
                 response.sendRedirect(redURL);
             } 
             else {
-                %>
-                <script>
-                    badLog();
-                </script>
-                <%
-                String badURL = "index.jsp";
-                response.sendRedirect(badURL);
+                //request.setAttribute("failAlert","Wrong");
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Username or Password Inccorect');");
+                out.println("location='index.jsp';");
+                out.println("</script>");
+                //String badURL = "index.jsp";
+                //response.sendRedirect(badURL);
             }
         %>
-        <p name="failAlert">
-            
-        </p>
         
 
         <%=
