@@ -48,6 +48,7 @@ public class Login {
                     re = false;
                 }
             }
+            con.close();
         }
         catch (SQLException e) {
             e.printStackTrace();

@@ -14,38 +14,30 @@
     </head>
     <body>
         <h1>Workout Builder</h1>
-        <form action="Request.jsp" method="get">
+        <form action="results.jsp" method="get">
             <p>Are you training for Strength or Conditioning?</p>
             <label for="st">Strength: </label>
-            <input type="radio" name="SorC" id="st">
+            <input type="radio" name="SorC" id="st" value="1">
             <label for="end">Conditioning: </label>
-            <input type="radio" name="SorC" id="end">
+            <input type="radio" name="SorC" id="end" value="0">
             <br>
             <p>Are you training Upper Body, Lower Body, Core or All?</p>
             <label for="upp">Upper Body</label>
-            <input type="checkbox" name="type" id="upp">
+            <input type="checkbox" name="type" id="upp" value="Upper Body">
             <label for="low">Lower Body</label>
-            <input type="checkbox" name="type" id="low">
+            <input type="checkbox" name="type" id="low" value="Lower Body">
             <label for="core">Core</label>
-            <input type="checkbox" name="type" id="core">
+            <input type="checkbox" name="type" id="core" value="Core">
             <label for="all">All</label>
-            <input type="checkbox" name="type" id="all">
+            <input type="checkbox" name="type" id="all" value="*">
             <br>
             <p>Would you like a low, moderate, or intense workout?</p>
             <label for="l">Low </label>
-            <input type="radio" name="l" id="l">
-            <label for="m">Conditioning </label>
-            <input type="radio" name="m" id="m">
+            <input type="radio" name="intense" id="l" value="Low">
+            <label for="m">Moderate </label>
+            <input type="radio" name="intense" id="m" value="Moderate">
             <label for="i">Intense </label>
-            <input type="radio" name="i" id="i">
-            <br>
-            <p>How long of a workout would you like?</p>
-            <label for="sh">Short </label>
-            <input type="radio" name="lon" id="sh">
-            <label for="me">Medium </label>
-            <input type="radio" name="lon" id="me">
-            <label for="lo">Long </label>
-            <input type="radio" name="lon" id="lo">
+            <input type="radio" name="intense" id="i" value="High">
             <input type="submit"> 
         </form>
         <br>
