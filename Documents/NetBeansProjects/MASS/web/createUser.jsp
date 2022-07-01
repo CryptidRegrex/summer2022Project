@@ -41,12 +41,13 @@
 
         <% 
             if (a) {
-                String redURL = "http://www.w3schools.com";
+                String redURL = "build.jsp";
                 response.sendRedirect(redURL);
             } 
             else {
-                String badURL = "index.jsp";
+                String badURL = "home.jsp";
                 response.sendRedirect(badURL);
+                //c
             }
         %>
 

@@ -48,14 +48,14 @@
         
         <% 
             if (a) {
-                String redURL = "http://www.w3schools.com";
+                String redURL = "build.jsp";
                 response.sendRedirect(redURL);
             } 
             else {
                 //request.setAttribute("failAlert","Wrong");
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('Username or Password Inccorect');");
-                out.println("location='index.jsp';");
+                out.println("location='home.jsp';");
                 out.println("</script>");
                 //String badURL = "index.jsp";
                 //response.sendRedirect(badURL);
