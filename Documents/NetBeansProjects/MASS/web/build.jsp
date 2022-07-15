@@ -15,9 +15,15 @@
     <body>
         <h1>Workout Builder</h1>
         <form action="results.jsp" method="get">
+            <p>Do you have equipment?</p>
+            <label for="st">Yes: </label>
+            <input type="radio" name="equ" id="st" value="1" checked="checked">
+            <label for="end">No: </label>
+            <input type="radio" name="equ" id="end" value="0">
+            <br>
             <p>Are you training for Strength or Conditioning?</p>
             <label for="st">Strength: </label>
-            <input type="radio" name="SorC" id="st" value="1">
+            <input type="radio" name="SorC" id="st" value="1" checked="checked">
             <label for="end">Conditioning: </label>
             <input type="radio" name="SorC" id="end" value="0">
             <br>
@@ -29,13 +35,13 @@
             <label for="core">Core</label>
             <input type="checkbox" name="type" id="core" value="Core">
             <label for="all">All</label>
-            <input type="checkbox" name="type" id="all" value="*">
+            <input type="checkbox" name="type" id="all" value="*" checked="checked">
             <br>
             <p>Would you like a low, moderate, or intense workout?</p>
             <label for="l">Low </label>
             <input type="radio" name="intense" id="l" value="Low">
             <label for="m">Moderate </label>
-            <input type="radio" name="intense" id="m" value="Moderate">
+            <input type="radio" name="intense" id="m" value="Moderate"  checked="checked">
             <label for="i">Intense </label>
             <input type="radio" name="intense" id="i" value="High">
             <input type="submit"> 

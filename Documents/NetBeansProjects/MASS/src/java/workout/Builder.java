@@ -9,7 +9,6 @@ package workout;
  * @author JDTobiason
  */
 
-
 import java.io.*;
 import java.util.*;
 import java.sql.*;
@@ -17,68 +16,95 @@ import javax.servlet.http.*;
 import javax.servlet.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
-
+import java.util.ArrayList;
+import java.lang.Math;
 
 public class Builder {
     
     
-    public static int[] returnExercises(String... workouts) {
+    public static ArrayList<String> returnExercises(String wType, String wInt, String equ, String[] workouts) {
         
-        for (int i = 0;i < 3; i++) {
-            System.out.println(workouts[i]);
-        }
-        
-        /*if (workouts[2].compareTo("Lower Body") == 0) {
-
-        }*/
-        
-        /*if (workouts[0].compareTo("1") == 0) {
-            workouts[0] = "true";
-        }
-        else {
-            workouts[0] = "false";
-        }*/
-        
-        
-        
-        int[] wIds = new int[5];
+        ArrayList<String> workoutFields = new ArrayList<String>();
         
         try {
+            //lines for Justin Kenney's version to run
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            //String url = "jdbc:mysql://localhost:3306/workouts?allowPublicKeyRetrieval=true&useSSL=false";
+            
+            
             String url = "jdbc:mysql://localhost:3306/mass?allowPublicKeyRetrieval=true&useSSL=false";
             Connection con = DriverManager.getConnection(url,"root","1234");
             Statement createCon = con.createStatement();
+            
             ResultSet rs;
-            String sqlquery = "SELECT WorkoutID FROM workouts WHERE WType=? AND Mgroup=? AND Intensity=?";
-            PreparedStatement sqlSelect = con.prepareStatement(sqlquery);
-            sqlSelect.setString(1, workouts[0]);
-            sqlSelect.setString(2, workouts[1]);
-            sqlSelect.setString(3, workouts[2]);
-            // AND Intensity=? AND Mgroup=?
-            // WType=? AND 
+            String sqlquery;
+            PreparedStatement sqlSelect;
+            
+            //Check if "All" has been selected for muscle groups
+            boolean allCheck = false;
+            for(String test :workouts){
+                if(test.equals("*")){
+                    allCheck = true;
+                    break;
+                }
+            }
+            String tempEquBol = " AND EquipmentBol='0'";
+            
+            //Setup the appropriate query
+            if(allCheck || workouts.length>2){
+                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workout WHERE WType=? AND Intensity=?";
+                if(equ.equals("0")){
+                    sqlquery = sqlquery + tempEquBol;
+                }
+                sqlSelect = con.prepareStatement(sqlquery);
+            }else if(workouts.length == 2){
+                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workout WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
+                if(equ.equals("0")){
+                    sqlquery = sqlquery + tempEquBol;
+                }
+                sqlSelect = con.prepareStatement(sqlquery);
+                sqlSelect.setString(3, workouts[0]);
+                sqlSelect.setString(4, workouts[1]);
+            }else{
+                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workout WHERE WType=? AND Intensity=? AND Mgroup=?";
+                if(equ.equals("0")){
+                    sqlquery = sqlquery + tempEquBol;
+                }
+                sqlSelect = con.prepareStatement(sqlquery);
+                sqlSelect.setString(3, workouts[0]);
+            }
+            
+            
+            sqlSelect.setString(1, wType);
+            sqlSelect.setString(2, wInt);
+        
             rs = sqlSelect.executeQuery();
+            
             if (rs == null) {
                 System.out.println("There was nothing!!!! >:(");
             }
-            //rs = createCon.executeQuery("SELECT WorkoutID, WHERE Wtype=?, Intesity=?, Mgroup=? pass FROM workouts");
-            //Check to see if the user exists and they have the right password to return true
-            int x = 0;
+            
+            //Grab all the fields from the query
             while(rs.next()) {
-                wIds[x] = rs.getInt("WorkoutID");
-                System.out.println(rs.getInt("WorkoutID"));
-                x++;
-                if (x == 5) {
-                    break;
-                }
+                workoutFields.add(String.valueOf(rs.getInt(1)));
+                workoutFields.add(rs.getString(2));
+                workoutFields.add(String.valueOf(rs.getInt(3)));
+                workoutFields.add(String.valueOf(rs.getInt(4)));
+                workoutFields.add(String.valueOf(Math.round(rs.getFloat(5)*100)));
+                
             }
             con.close();
         }
         catch (SQLException e) {
             e.printStackTrace();
+        } 
+        /*This catch block is for Justin Kenney's version
+        catch (ClassNotFoundException e) {
+            e.printStackTrace();
             
-        }
+        } */
 
-        return wIds;
+        return workoutFields;
     }
     
 }
