@@ -18,7 +18,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="theme.css"/>
-        <title>JSP Page</title>
+        <title>Login</title>
     </head>
     
     <script lang="JavaScript">
@@ -27,24 +27,20 @@
         }
     </script>
     <body>
+        <h1>Login</h1>
         <form action="goodLogin.jsp">
-        <h1>MASS</h1>
+        <p>If you are an existing user, please login below: </p>
+        <br>
         <label for="username">User Name:</label> 
         <input type="text" name="username" required="true"> 
         <label for"password">Password:</label>
         <input type="password" name="password" required="true">
-
-        <br>
-        <br>
-        
-
-
         <input type="submit" value="Login" id="logButton" name="userLogin"> 
         </form>
+        <br>
         <form action="newUser.jsp">
-            <br>
+            <p>Otherwise, click to create a new account: </p>
             <input type="submit" value="New User" id="newButon" name="userNew">
         </form>
-
     </body>
 </html>

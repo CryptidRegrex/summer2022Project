@@ -1,65 +1,57 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
-*/
-/* 
-    Created on : Jun 13, 2022, 11:34:50 AM
-    Author     : Travis McMahon
-*/
+html
+{
+    background-image: url('deadlift.jpg');
+    background-size: cover;
+    text-align: center;
+    color: black; 
+    margin: auto;
 
-body {
-  background-image: url('jonathan-borba-zfPOelmDc-M-unsplash.jpg');
-  background-position: center;
-  text-align: center;
-  background-size: auto;
-  background-color: #ff0033;
 }
 
-h1 {
-  color: black;
-  text-align: center;
-  text-shadow: 2px 2px #ff0000;
-  background-color: background;
-}
-
-h2 {
-  color: black;
-  text-align: center;
-  text-shadow: 2px 2px #ff0000;
-  display: inline-block;
-  background-color: background;
-}
-
-h3 {
-  color: black;
-  text-align: center;
-  text-shadow: 2px 2px #ff0000;
-  background-color: background;
-}
-
-p {
-  font-family: serif;
-  font-size: 20px;
-  display: inline-block;
-  width: 500px;
-  background-color: background;
-  
-}
-
-ul
+body
 {
     display: inline-block;
-    list-style-position: inside;
-    text-align: left;
-    background-color: background;
+}
+
+h1
+{
+    display: inline-block;
+    background-color: burlywood;
+
+}
+
+h2
+{
+    display: inline-grid;
+    background-color: burlywood; 
+
+}
+
+h3
+{
+    display: inline-grid;
+    background-color: burlywood;
+
+}
+
+p
+{
+    background-color: burlywood;
 }
 
 label
 {
-    font-family: serif;
-    font-size: 20px;
-    display: inline-block;
-    width: 500px;
-    background-color: background;
-    
+    background-color: burlywood;
+}
+
+ul
+{
+    background-color: burlywood; 
+    text-align: left;
+    display: inline-grid;
+}
+
+li
+{
+    list-style: inside;
 }
