@@ -3,12 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package workout;
-
-/**
- *
- * @author JDTobiason
- */
-
 import java.io.*;
 import java.util.*;
 import java.sql.*;
@@ -19,9 +13,23 @@ import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.lang.Math;
 
+/**
+ * This class does all the logic for determine what exercises to serve the user
+ * based on the user's input
+ * @author JDTobiason
+ */
 public class Builder {
     
-    
+    /**
+     * This class takes information from the user via our webpage and 
+     * uses the information to return an array of exercises given with a 
+     * workoutID. 
+     * @param wType This is the workout type
+     * @param wInt This is the workout intensity
+     * @param equ This is the workout equipment
+     * @param workouts This is the types of workouts like lower, upper, all...
+     * @return workoutFields An array of workoutIds based on the user input
+     */
     public static ArrayList<String> returnExercises(String wType, String wInt, String equ, String[] workouts) {
         
         ArrayList<String> workoutFields = new ArrayList<String>();
@@ -52,13 +60,13 @@ public class Builder {
             
             //Setup the appropriate query
             if(allCheck || workouts.length>2){
-                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workout WHERE WType=? AND Intensity=?";
+                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workouts WHERE WType=? AND Intensity=?";
                 if(equ.equals("0")){
                     sqlquery = sqlquery + tempEquBol;
                 }
                 sqlSelect = con.prepareStatement(sqlquery);
             }else if(workouts.length == 2){
-                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workout WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
+                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workouts WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
                 if(equ.equals("0")){
                     sqlquery = sqlquery + tempEquBol;
                 }
@@ -66,7 +74,7 @@ public class Builder {
                 sqlSelect.setString(3, workouts[0]);
                 sqlSelect.setString(4, workouts[1]);
             }else{
-                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workout WHERE WType=? AND Intensity=? AND Mgroup=?";
+                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workouts WHERE WType=? AND Intensity=? AND Mgroup=?";
                 if(equ.equals("0")){
                     sqlquery = sqlquery + tempEquBol;
                 }
