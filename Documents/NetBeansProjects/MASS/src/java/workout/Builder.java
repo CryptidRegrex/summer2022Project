@@ -9,11 +9,7 @@ package workout;
  * @author JDTobiason
  */
 
-import java.io.*;
-import java.util.*;
 import java.sql.*;
-import javax.servlet.http.*;
-import javax.servlet.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.ArrayList;
@@ -28,7 +24,7 @@ public class Builder {
         
         try {
             //lines for Justin Kenney's version to run
-            //Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             //String url = "jdbc:mysql://localhost:3306/workouts?allowPublicKeyRetrieval=true&useSSL=false";
             
             
@@ -52,13 +48,13 @@ public class Builder {
             
             //Setup the appropriate query
             if(allCheck || workouts.length>2){
-                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workout WHERE WType=? AND Intensity=?";
+                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=?";
                 if(equ.equals("0")){
                     sqlquery = sqlquery + tempEquBol;
                 }
                 sqlSelect = con.prepareStatement(sqlquery);
             }else if(workouts.length == 2){
-                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workout WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
+                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
                 if(equ.equals("0")){
                     sqlquery = sqlquery + tempEquBol;
                 }
@@ -66,7 +62,7 @@ public class Builder {
                 sqlSelect.setString(3, workouts[0]);
                 sqlSelect.setString(4, workouts[1]);
             }else{
-                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workout WHERE WType=? AND Intensity=? AND Mgroup=?";
+                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=? AND Mgroup=?";
                 if(equ.equals("0")){
                     sqlquery = sqlquery + tempEquBol;
                 }
@@ -98,11 +94,11 @@ public class Builder {
         catch (SQLException e) {
             e.printStackTrace();
         } 
-        /*This catch block is for Justin Kenney's version
+        
         catch (ClassNotFoundException e) {
             e.printStackTrace();
             
-        } */
+        } 
 
         return workoutFields;
     }

@@ -1,42 +1,36 @@
+
 html
 {
     background-image: url('deadlift.jpg');
-    background-size: cover;
-    text-align: center;
-    color: black; 
-    margin: auto;
-
+    background-size: cover;   
+    color: black;
 }
 
 body
 {
-    display: inline-block;
+    text-align: center;
+    width: 75%;
+    margin: auto;
 }
 
 h1
-{
-    display: inline-block;
+{   
     background-color: burlywood;
-
 }
 
 h2
 {
-    display: inline-grid;
     background-color: burlywood; 
-
 }
 
 h3
 {
-    display: inline-grid;
     background-color: burlywood;
-
 }
 
 p
 {
-    background-color: burlywood;
+    background-color: burlywood;   
 }
 
 label
@@ -44,14 +38,19 @@ label
     background-color: burlywood;
 }
 
-ul
+form
 {
-    background-color: burlywood; 
-    text-align: left;
     display: inline-grid;
 }
 
-li
+ul
 {
+    background-color: burlywood; 
+    display: inline-grid;
+    text-align: left;
+}
+
+li
+{   
     list-style: inside;
 }

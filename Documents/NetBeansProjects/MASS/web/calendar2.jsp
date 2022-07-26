@@ -7,9 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <%
-        String workoutSessionValues[] = request.getParameterValues("type");
-    %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="theme.css"/>
@@ -17,19 +14,25 @@
     </head>
     <body>
         <h1>Calendar</h1>
-    </body>
-    <br>
-    <p1>
-        <%for(int i = 0;i < workoutSessionValues.length; i++){%>
-            <%=workoutSessionValues[i]%>
-            <br>
+        <%String [] k = (String[])session.getAttribute("a");%>
+        <form action="schedule.jsp" method="get">
+        <ul>
+        <%for(int i = 0; i < k.length; i++){%>
+        <li><label for="e">Exercise: </label>
+            <input type="text" name="e" value="<%=k[i]%>" disabled/>
+            <label for="d">Date and Time: </label>
+            <input type="datetime-local" name="d" min="2022-07-25T00:00f"/>
+        </li>
         <%}%>
-    </p1>
+        </ul>
+            <input type="submit" value="Submit"/>
+        </form>       
+    <br>  
      <h3>Navigation</h2>
         <ul>
             <li><a href="home.jsp">Home</li> 
             <li><a href="build.jsp">Workout Builder</li>
-            <li><a href="calendar.jsp">Calendar</li>
             <li><a href="information.jsp">Information</li> 
         </ul>
+     </body>
 </html>

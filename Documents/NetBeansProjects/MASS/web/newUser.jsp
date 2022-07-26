@@ -14,15 +14,13 @@
     </head>
     <body>
         <h1>Create An Account</h1>
-        
         <form action="createUser.jsp">
-            <label for="username">User Name:</label>
+            <label for="usernameNew">User Name:</label>
             <input type="text" name="usernameNew" required="true"> 
-            <label for="password">Password:</label>
-            <input type="password" name="passwordOne" required="true">
-            <label for"password">Re-type Password:</label>
+            <label for="passwordOne">Password:</label>
+            <input type="passwordTwo" name="passwordOne" required="true">
+            <label for="password">Re-type Password:</label>
             <input type="password" name="passwordTwo" required="true">
-            <br>
             <br>
             <input type="submit" value="Create New User" id="cNewButton" name="cUserNew">
         </form>

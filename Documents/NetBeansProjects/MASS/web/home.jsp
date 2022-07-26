@@ -30,7 +30,7 @@
         <h3>Navigation</h3>
         <ul>
             <li><a href="build.jsp">Workout Builder</li>
-            <li><a href="calendar.jsp">Calendar</li>
+            <li><a href="calendar1.jsp">Calendar</li>
             <li><a href="information.jsp">Information</li> 
         </ul>
     </body>

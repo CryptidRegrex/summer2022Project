@@ -13,13 +13,13 @@
         <title>Information</title>
     </head>
     <body>
-        <h1>Info</h1>
+        <h1>Workout Information</h1>
+        <p></p>
     </body>
      <h3>Navigation</h2>
         <ul>
             <li><a href="home.jsp">Home</li> 
             <li><a href="build.jsp">Workout Builder</li>
             <li><a href="calendar.jsp">Calendar</li>
-            <li><a href="information.jsp">Information</li> 
         </ul>
 </html>

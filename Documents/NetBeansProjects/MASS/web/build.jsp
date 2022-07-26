@@ -20,13 +20,11 @@
             <input type="radio" name="equ" id="st" value="1" checked="checked">
             <label for="end">No: </label>
             <input type="radio" name="equ" id="end" value="0">
-            <br>
             <p>Are you training for Strength or Conditioning?</p>
             <label for="st">Strength: </label>
             <input type="radio" name="SorC" id="st" value="1" checked="checked">
             <label for="end">Conditioning: </label>
             <input type="radio" name="SorC" id="end" value="0">
-            <br>
             <p>Are you training Upper Body, Lower Body, Core or All?</p>
             <label for="upp">Upper Body</label>
             <input type="checkbox" name="type" id="upp" value="Upper Body">
@@ -36,7 +34,6 @@
             <input type="checkbox" name="type" id="core" value="Core">
             <label for="all">All</label>
             <input type="checkbox" name="type" id="all" value="*" checked="checked">
-            <br>
             <p>Would you like a low, moderate, or intense workout?</p>
             <label for="l">Low </label>
             <input type="radio" name="intense" id="l" value="Low">
@@ -50,7 +47,6 @@
      <h3>Navigation</h2>
         <ul>
             <li><a href="home.jsp">Home</li> 
-            <li><a href="build.jsp">Workout Builder</li>
             <li><a href="calendar.jsp">Calendar</li>
             <li><a href="information.jsp">Information</li> 
         </ul>
