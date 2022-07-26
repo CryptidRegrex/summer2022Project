@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 /**
- *
+ * This class handles all calls for login and creating a new user in our database
  * @author JDTobiason
  */
 public class Login {
@@ -21,11 +21,11 @@ public class Login {
     private static String u;
     private static String p;
     
-    
-    public Login(String username, String password) {
+    //No constructor needed
+    /*public Login() {
         //user = username;
         //pass = password;
-    }
+    }*/
     
     private static Boolean checkLength(String user, String passw) {
         Boolean ret = false;
@@ -35,6 +35,13 @@ public class Login {
         return ret;
     }
     
+    /**
+     * This function takes the user name and password a user enters and checks 
+     * to determine if the user exists in the database or not
+     * @param user Username value
+     * @param passw User's password
+     * @return re This will return true on the user's existence and false otherwise
+     */
     public static Boolean checkUser(String user, String passw) {
         
         Boolean re = false;
@@ -81,6 +88,16 @@ public class Login {
         return re;
     }
     
+    /**
+     * This function takes the username, password, and retyped password
+     * and will create a new user if the username does not already exist in the 
+     * database.
+     * @param newUser Username value
+     * @param passw password value
+     * @param passw2 retyped password value
+     * @return re This will return true if the username does not exist and the
+     * passwords are the same
+     */
     public static Boolean createNewUser(String newUser, String passw, String passw2) {
         Boolean re = false;
         Boolean testCheck = false;
@@ -138,10 +155,19 @@ public class Login {
         return re;
     }
     
+    
+    /**
+     * Used to set the username for the global parameter u
+     * @param user 
+     */
     public static void setUser(String user) {
         u = user;
     }
     
+    /**
+     * Used to get the username for the global parameter u
+     * @return u
+     */
     public String getUser() {
         return u;
     }
