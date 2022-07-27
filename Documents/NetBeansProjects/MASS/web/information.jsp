@@ -14,7 +14,64 @@
     </head>
     <body>
         <h1>Workout Information</h1>
-        <p></p>
+        <h2>
+            Workout Information
+        </h2>
+        <p>We have many different workouts available to each user. On this page you can read about each workout, what equipment you may need, the muscle(s) it targets, and how to perform each workout.</p>
+        <h3>
+            Bench
+        </h3>
+            <p>
+
+            </p>
+        <h3>
+            Bench
+        </h3>
+            <p>
+
+            </p>
+        <h3>
+            Bench
+        </h3>
+            <p>
+
+            </p>
+        <h3>
+            Bench
+        </h3>
+            <p>
+
+            </p>
+        <h3>
+            Bench
+        </h3>
+            <p>
+
+            </p>
+        <h3>
+            Bench
+        </h3>
+            <p>
+
+            </p>
+        <h3>
+            Bench
+        </h3>
+            <p>
+
+            </p>
+        <h3>
+            Bench
+        </h3>
+            <p>
+
+            </p>
+        <h3>
+            Bench
+        </h3>
+            <p>
+
+            </p>
     </body>
      <h3>Navigation</h2>
         <ul>

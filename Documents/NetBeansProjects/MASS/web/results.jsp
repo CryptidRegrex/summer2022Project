@@ -40,6 +40,7 @@
             workFields[j] = workFields[j*5 + 1] + "- Sets: " + workFields[j*5+2] + " Reps: " + workFields[j*5+3] + " One Rep Max: " + workFields[j*5+4] + "%";
         }
         session.setAttribute("a", h);
+        session.setAttribute("w", wIds);
     %>
     
 <!DOCTYPE html>

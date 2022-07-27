@@ -14,7 +14,7 @@ import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.lang.Math;
 
-public class Calendar {
+public class Calender {
     
     /**
      * This class takes information from the user via our webpage and 

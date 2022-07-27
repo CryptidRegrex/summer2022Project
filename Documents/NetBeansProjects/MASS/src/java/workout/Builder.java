@@ -71,8 +71,13 @@ public class Builder {
                 }
                 sqlSelect = con.prepareStatement(sqlquery);
             }else if(workouts.length == 2){
+
                 //sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
                 sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workouts WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
+
+                //sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
+               // sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
+
 
                 if(equ.equals("0")){
                     sqlquery = sqlquery + tempEquBol;

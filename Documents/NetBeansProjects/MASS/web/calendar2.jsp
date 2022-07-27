@@ -15,13 +15,15 @@
     <body>
         <h1>Calendar</h1>
         <%String [] k = (String[])session.getAttribute("a");%>
+        <%String [] wIDs = (String[])session.getAttribute("w");%>
         <form action="schedule.jsp" method="get">
         <ul>
+            <label for="d">Date: </label>
+            <input type="date" name="d" min="<%=java.time.LocalDate.now()%>" required/>
         <%for(int i = 0; i < k.length; i++){%>
         <li><label for="e">Exercise: </label>
             <input type="text" name="e" value="<%=k[i]%>" disabled/>
-            <label for="d">Date and Time: </label>
-            <input type="datetime-local" name="d" min="2022-07-25T00:00f"/>
+            <input type="checkbox" name="ids" value="<%=wIDs[i]%>" />
         </li>
         <%}%>
         </ul>
