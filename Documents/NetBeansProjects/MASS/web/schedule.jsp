@@ -20,7 +20,6 @@
         <ul>
             <%String [] k2 = (String[])session.getAttribute("a");%>
             <%String [] g = request.getParameterValues("d");
-              String [] t = request.getParameterValues("t");
               for(int u = 0; u < g.length; u++)
               {
                     if(g[u] == "")
@@ -28,7 +27,7 @@
                         continue;
                     }
                     %>     
-                <li><%out.println(k2[u]); out.println(g[u]); out.println(t[u]);}%></li>              
+                <li><%out.println(k2[u]); out.println(g[u]);}%></li>              
         </ul>
     </body>
 </html>
