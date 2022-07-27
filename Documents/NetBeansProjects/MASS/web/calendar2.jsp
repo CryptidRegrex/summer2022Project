@@ -21,7 +21,7 @@
         <li><label for="e">Exercise: </label>
             <input type="text" name="e" value="<%=k[i]%>" disabled/>
             <label for="d">Date: </label>
-            <input type="date" name="d" min="2022-07-25"/>
+            <input type="date" name="d" min="<%=java.time.LocalDate.now()%>"/>
         </li>
         <%}%>
         </ul>
