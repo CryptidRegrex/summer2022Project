@@ -27,7 +27,6 @@ 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
         <p><a href="newUser.jsp">Create Account</a></p>
         <p><a href="login.jsp">Login</a></p>
         <br>
-        
         <h3>Navigation</h3>
         <ul>
             <li><a href="build.jsp">Workout Builder</li>

@@ -15,7 +15,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="theme.css"/>
-        <link rel="stylesheet" href="calendar.css"/>
         <title>Calendar</title>
     </head>
     <body>
@@ -24,20 +23,17 @@
     </body>
     <br>
         <p1>
-        <%for(int i = 0;i < workoutSessionValues.length; i++){%>
+        <%for(int i = 0; i < workoutSessionValues.length; i++){%>
             <%=workoutSessionValues[i]%>
             <br>
         <%}%>
         </p1>
     <br>
-
-
-
     <h3>Navigation</h2>
         <ul>
             <li><a href="home.jsp">Home</li> 
             <li><a href="build.jsp">Workout Builder</li>
-            <li><a href="calendar.jsp">Calendar</li>
+            <li><a href="calendar1.jsp">Calendar</li>
             <li><a href="information.jsp">Information</li> 
         </ul>
 </html>

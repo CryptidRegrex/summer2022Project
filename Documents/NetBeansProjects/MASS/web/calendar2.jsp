@@ -20,8 +20,10 @@
         <%for(int i = 0; i < k.length; i++){%>
         <li><label for="e">Exercise: </label>
             <input type="text" name="e" value="<%=k[i]%>" disabled/>
-            <label for="d">Date and Time: </label>
-            <input type="datetime-local" name="d" min="2022-07-25T00:00f"/>
+            <label for="d">Date: </label>
+            <input type="date" name="d" min="2022-07-25"/>
+            <label for="t">Time: </label>
+            <input type="time" name="t" min="2022-07-25"/>
         </li>
         <%}%>
         </ul>

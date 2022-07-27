@@ -20,15 +20,15 @@
         <ul>
             <%String [] k2 = (String[])session.getAttribute("a");%>
             <%String [] g = request.getParameterValues("d");
-                DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
-                for(int u = 0; u < g.length; u++)
-                {
+              String [] t = request.getParameterValues("t");
+              for(int u = 0; u < g.length; u++)
+              {
                     if(g[u] == "")
                     {
                         continue;
                     }
-                    LocalDateTime d = LocalDateTime.parse(g[u], f);%>     
-                <li><%out.println(k2[u]); out.println(d);}%></li>              
+                    %>     
+                <li><%out.println(k2[u]); out.println(g[u]); out.println(t[u]);}%></li>              
         </ul>
     </body>
 </html>
