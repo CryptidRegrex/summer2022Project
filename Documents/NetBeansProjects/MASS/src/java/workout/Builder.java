@@ -62,7 +62,7 @@ public class Builder {
             
             //Setup the appropriate query
             if(allCheck || workouts.length>2){
-                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=?";
+                //sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=?";
 
                 sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workouts WHERE WType=? AND Intensity=?";
 
@@ -71,7 +71,7 @@ public class Builder {
                 }
                 sqlSelect = con.prepareStatement(sqlquery);
             }else if(workouts.length == 2){
-                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
+                //sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
                 sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workouts WHERE WType=? AND Intensity=? AND (Mgroup=? OR Mgroup=?)";
 
                 if(equ.equals("0")){
@@ -81,7 +81,7 @@ public class Builder {
                 sqlSelect.setString(3, workouts[0]);
                 sqlSelect.setString(4, workouts[1]);
             }else{
-                sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=? AND Mgroup=?";
+                // sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxReps FROM workouts WHERE WType=? AND Intensity=? AND Mgroup=?";
 
                 sqlquery = "SELECT WorkoutID, Workout, Sets, Reps, MaxRep FROM workouts WHERE WType=? AND Intensity=? AND Mgroup=?";
                 if(equ.equals("0")){

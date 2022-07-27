@@ -7,6 +7,8 @@
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="java.time.LocalDateTime"%>
 <%@page import="java.util.Arrays"%>
+<%@page import="java.util.Date"%>
+<%@ page import = "java.util.Calendar"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,6 +22,10 @@
         <ul>
             <%String [] k2 = (String[])session.getAttribute("a");%>
             <%String [] g = request.getParameterValues("d");
+            
+                String [] test = new String[3];
+                int [] iTest = new int[3];
+                
                 DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
                 for(int u = 0; u < g.length; u++)
                 {
@@ -27,7 +33,20 @@
                     {
                         continue;
                     }
-                    LocalDateTime d = LocalDateTime.parse(g[u], f);%>     
+                    Calendar c = Calendar.getInstance();
+                    test = g[0].split("-");
+                    test[2] = test[2].substring(0,2);
+                    //c.setTime();
+                    for(int i = 0; i < 3; i++){
+                        iTest[i] = Integer.valueOf(test[i]);
+                    }
+                    
+                    Date t = new Date(iTest[0], iTest[1], iTest[2]);
+                    String dOW = t.toString();
+                    dOW = dOW.substring(0, 3);
+                    LocalDateTime d = LocalDateTime.parse(g[u], f);%>
+                    <%=dOW%>
+                    
                 <li><%out.println(k2[u]); out.println(d);}%></li>              
         </ul>
     </body>
