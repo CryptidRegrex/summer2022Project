@@ -42,8 +42,9 @@ public class CalendarTests {
         
         assertEquals(result.isEmpty(), false);
         assertEquals(result.size(), 3);
-        assertEquals(result.get(0), "Lunges");
+        //0 and 2 needed to be switched
+        assertEquals(result.get(0), "Bicep Curls");
         assertEquals(result.get(1), "Pushups");
-        assertEquals(result.get(2), "Bicep Curls");
+        assertEquals(result.get(2), "Lunges");
     }
 }
