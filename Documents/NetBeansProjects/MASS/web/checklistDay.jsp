@@ -38,8 +38,9 @@
 
     
     
-    <progress name="workoutProgress" id="workoutProgress" value="10" max="100"> </progress>
+
     <h3><%=day%></h3>
+    <progress name="workoutProgress" id="workoutProgress" value="0" max="100" style="width:100%; height:100%"> </progress>
     <ul>
         <% for(String t: Calender.wNames(aWorkout)) { %>
         <li><%=t%>
@@ -48,6 +49,7 @@
         </li>
         <%}%>
     </ul>
+    
     <script>
         function test() {
             let pro = document.querySelector("progress");
@@ -55,29 +57,26 @@
             var full = 100;
             var points = 0;
             var total = 0;
+            var len = "<%=i%>";
+            var divisor = full / len;
+            console.log(len);
             //let check = document.querySelector("#complete").checked;
             console.log(check);
-            for (var ne = 1; ne <= 5; ne++) {
+            for (var ne = 1; ne <= len; ne++) {
                 check[ne] = document.querySelector("#complete" + ne).checked;
                 console.log(check[ne]);
                 if (check[ne] === true) {
                     points++;
                 }
             }
-            total = points * 20;
+            
+            total = points * divisor;
+            console.log(total);
             pro.setAttribute("value",total);
             
-            if (total === 100) {
+            if (total >= 100) {
                 alert("You did it!!!");
             }
-            //document.getElementByID("workoutProgress").value = 100;
-            /*if (check === true) {
-                pro.setAttribute("value",total);
-            }
-            else {
-                pro.setAttribute("value","0");
-            }*/
-            //document.getElementById("checks").required = true; 
         }
     </script>
     <input type="button" value="Update Progress" onclick="test()">
@@ -86,8 +85,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="theme.css"/>
-        <title>JSP Page</title>
+        <title>Checklist</title>
     </head>
     <body>
+        
     </body>
 </html>

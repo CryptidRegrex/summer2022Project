@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="theme.css"/>
-        <title>JSP Page</title>
+        <title>Checklist Dropdown</title>
     </head>
     <body>
         <h1>Choose a day:</h1>
