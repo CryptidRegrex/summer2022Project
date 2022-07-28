@@ -8,6 +8,7 @@
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.util.Arrays"%>
 <%@ page import = "java.util.ArrayList"%>
+<%@page import = "login.Login"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import = "java.util.Calendar"%>
@@ -115,10 +116,13 @@
                     ResultSet rs;
                     String sqlquery;
                     PreparedStatement sqlSelect;
-
+                    String user = (String)session.getAttribute("user"); 
                     sqlquery = "UPDATE userworkouts SET " + day + " ='";
                     
-                    String temp = " Where userID='4'";
+                    String temp = " Where userID='" + user + "'";
+ 
+
+                    
                     
                     
             
@@ -147,7 +151,7 @@
                     
                     
                         
-                    String sch = "Select * FROM userworkouts WHERE userID='4'";
+                    String sch = "Select * FROM userworkouts Where userID='" + user + "'";
                     PreparedStatement sqlSch = con.prepareStatement(sch);
                     rs = sqlSch.executeQuery();
                     
@@ -216,7 +220,11 @@
                     <%}%>
                     
                     
-                        
+                    
+                    
+                    
+                    
+                           
         </ul>
     </body>
     

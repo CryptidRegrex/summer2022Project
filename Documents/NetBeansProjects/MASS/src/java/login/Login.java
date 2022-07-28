@@ -69,6 +69,7 @@ public class Login {
                     if (user.compareTo(rs.getString("user_name")) == 0 && passw.compareTo(rs.getString("pass")) == 0)
                     {
                         re = true;
+                        u = user;
                         break;
                     }
                     else {
@@ -143,6 +144,12 @@ public class Login {
                     sqlInsert.setString(1, newUser);
                     sqlInsert.setString(2, passw);
                     sqlInsert.execute();
+                    //This is going to insert a null calender for our users in the userworkouts database
+                    String sqlCal = "INSERT INTO userworkouts VALUES(?, 0, 0, 0, 0, 0, 0, 0)";
+                    PreparedStatement sqlInsertCal = con.prepareCall(sqlCal);
+                    sqlInsertCal.setString(1, newUser);
+                    sqlInsertCal.execute();
+                   
                 }
                 con.close();
 
@@ -168,7 +175,7 @@ public class Login {
      * Used to get the username for the global parameter u
      * @return u
      */
-    public String getUser() {
+    public static String getUser() {
         return u;
     }
     
