@@ -20,13 +20,19 @@
         <ul>
             <label for="d">Date: </label>
             <input type="date" name="d" min="<%=java.time.LocalDate.now()%>" required/>
-        <%for(int i = 0; i < k.length; i++){%>
-        <li><label for="e">Exercise: </label>
-            <input type="text" name="e" value="<%=k[i]%>" disabled/>
-            <input type="checkbox" name="ids" value="<%=wIDs[i]%>" />
-        </li>
-        <%}%>
+        
+            
+            <%for(int i = 0; i < k.length; i++){%>
+            <li><label for="e">Exercise: </label>
+                <input type="text" name="e" value="<%=k[i]%>" disabled/>
+                <input type="checkbox" name="ids" id="checks<%=i%>" value="<%=wIDs[i]%>" />
+            </li>
+            <%}%>
+        
+        
         </ul>
+        
+
             <input type="submit" value="Submit"/>
         </form>       
     <br>  

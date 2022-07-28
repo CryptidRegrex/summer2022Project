@@ -35,11 +35,28 @@
     </head>
     <body>
         <h1>Schedule</h1>
+        <c:redirect url="noResults.jsp"></c:redirect>
         <ul>
-            <%String [] k2 = (String[])session.getAttribute("a");%>
-            <%String [] g = request.getParameterValues("d"); %>
-           <%String[] testArray = request.getParameterValues("ids"); %>
-           <%
+            <%
+                String [] k2 = (String[])session.getAttribute("a");%>
+            <%String [] g = request.getParameterValues("d");
+            String[] testArray;
+            
+            
+           
+            %>
+           <%testArray = request.getParameterValues("ids"); 
+           
+            
+            //System.out.print(testArray);
+            if(testArray.length <= 0){%>
+                
+                <c:redirect url="noResults.jsp"></c:redirect>
+                
+           <% }
+            else{
+                System.out.println("Hi");
+            }
             java.util.Calendar c = java.util.Calendar.getInstance();
             
             String [] test = new String[3];
@@ -132,18 +149,90 @@
                     
                     
                     Calender.wNames(testArray);
-                    %>
-                    <%=day%>
                     
-                    <% for(String t: Calender.wNames(testArray)){ %>
-                        <%=t%>
+                    
+                        
+                    String sch = "Select * FROM userworkouts WHERE userID='3'";
+                    PreparedStatement sqlSch = con.prepareStatement(sch);
+                    rs = sqlSch.executeQuery();
+                    
+                    String[] wForSun = new String[30];
+                    String[] wForMon = new String[30];
+                    String[] wForTue = new String[30];
+                    String[] wForWed = new String[30];
+                    String[] wForThu = new String[30];
+                    String[] wForFri = new String[30];
+                    String[] wForSat = new String[30];
+                    
+                    while(rs.next()){
+                        if(!rs.getString(2).equals(null)){
+                            wForThu = rs.getString(2).split(",");
+                        }
+                        if(!rs.getString(3).equals(null)){
+                            wForMon = rs.getString(3).split(",");
+                        }
+                        if(!rs.getString(4).equals(null)){
+                            wForTue = rs.getString(4).split(",");
+                        }
+                        if(!rs.getString(5).equals(null)){
+                            wForWed = rs.getString(5).split(",");
+                        }
+                        
+                        if(!rs.getString(6).equals(null)){
+                            wForThu = rs.getString(6).split(",");
+                        }
+                        if(!rs.getString(7).equals(null)){
+                            wForFri = rs.getString(7).split(",");
+                        }
+                        if(!rs.getString(8).equals(null)){
+                            wForSat = rs.getString(8).split(",");
+                        }
+                    }
+                    
+                    %>
+                    
+                    <h3>Sunday</h3>
+                    <% for(String t: Calender.wNames(wForSun)){ %>
+                        <li><%=t%></li>
+                    <%}%>
+                    <h3>Monday</h3>
+                    <% for(String t: Calender.wNames(wForMon)){ %>
+                        <li><%=t%></li>
+                    <%}%>
+                    <h3>Tuesday</h3>
+                    <% for(String t: Calender.wNames(wForTue)){ %>
+                        <li><%=t%></li>
+                    <%}%>
+                    <h3>Wednesday</h3>
+                    <% for(String t: Calender.wNames(wForWed)){ %>
+                        <li><%=t%></li>
+                    <%}%>
+                    <h3>Thursday</h3>
+                    <% for(String t: Calender.wNames(wForThu)){ %>
+                        <li><%=t%></li>
+                    <%}%>
+                    <h3>Friday</h3>
+                    <% for(String t: Calender.wNames(wForFri)){ %>
+                        <li><%=t%></li>
+                    <%}%>
+                    <h3>Saturday</h3>
+                    <% for(String t: Calender.wNames(wForSat)){ %>
+                        <li><%=t%></li>
                     <%}%>
                     
                     
                     
                     
                     
-                <li><%}%></li>              
+                    
+                <%}%>           
         </ul>
     </body>
+    <h3>Sunday</h3>
+    <h3>Monday</h3>
+    <h3>Tuesday</h3>
+    <h3>Wednesday</h3>
+    <h3>Thursday</h3>
+    <h3>Friday</h3>
+    <h3>Saturday</h3>
 </html>
