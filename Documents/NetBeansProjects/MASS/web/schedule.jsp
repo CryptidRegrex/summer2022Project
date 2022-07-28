@@ -74,13 +74,8 @@
            
                 Date d = new Date();
                 
-                for(int u = 0; u < g.length; u++)
-                {
-                    if(g[u].equals(""))
-                    {
-                        continue;
-                    }
-                }    
+                
+                    
                     
                     int dOW = c.get(java.util.Calendar.DAY_OF_WEEK);
                     
@@ -232,11 +227,5 @@
                            
         </ul>
     </body>
-    <h3>Sunday</h3>
-    <h3>Monday</h3>
-    <h3>Tuesday</h3>
-    <h3>Wednesday</h3>
-    <h3>Thursday</h3>
-    <h3>Friday</h3>
-    <h3>Saturday</h3>
+    
 </html>
