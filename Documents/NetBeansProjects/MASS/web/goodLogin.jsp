@@ -49,6 +49,7 @@
         <% 
             if (a) {
                 String redURL = "build.jsp";
+                session.setAttribute("user", request.getParameter("username"));
                 response.sendRedirect(redURL);
             } 
             else {
