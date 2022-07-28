@@ -48,7 +48,8 @@
         <ul>
             <li><a href="home.jsp">Home</li> 
             <li><a href="calendar.jsp">Calendar</li>
-            <li><a href="information.jsp">Information</li> 
+            <li><a href="information.jsp">Information</li>
+            <li><a href="checklist.jsp">Checklist</li>
         </ul>
      </body>
 </html>
