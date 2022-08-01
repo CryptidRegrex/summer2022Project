@@ -13,3 +13,9 @@ Release Notes Milestone 2:
   JUnit tests have been created for the Login/Create New User system. This tests that a user can't outright break the system with bad user input. 
   The "build a workout" page has been built out with all user input features expected. This includes each input a user needs to add to help them determine the right workout for them.
   The UI has been updated and standardized across all browsers and any errors before with the UI have been smoothed out.
+
+Release Notes Milestone 3:
+JUnit tests have been added for the Checklist.java and Calender.java classes.
+The "build a workout has been fully fleshed out and the calender has been created with all features desired.
+Checklist has also been created with all features desired, but still needs some more test cases and UI formatting.
+Practical testing has been completed. 
