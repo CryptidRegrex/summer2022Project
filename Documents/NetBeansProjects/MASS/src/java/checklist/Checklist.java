@@ -21,6 +21,7 @@ public class Checklist {
         String[] workouts = new String[30];
         try {
             String url = "jdbc:mysql://localhost:3306/mass?allowPublicKeyRetrieval=true&useSSL=false";
+            Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(url,"root","1234");
             Statement createCon = con.createStatement();
             String sch = "Select * FROM userworkouts Where userID='" + user + "'";
@@ -61,9 +62,14 @@ public class Checklist {
                     workouts = rs.getString(queryColumn).split(",");
                 }
             }
+            
+            con.close();
         }
         catch (SQLException e) {
-        e.printStackTrace();
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException a) {
+            a.printStackTrace();
         }
         
         

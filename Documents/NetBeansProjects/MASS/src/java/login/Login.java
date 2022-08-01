@@ -60,6 +60,7 @@ public class Login {
         if (testCheck) {
             try {
                 String url = "jdbc:mysql://localhost:3306/mass?allowPublicKeyRetrieval=true&useSSL=false";
+                Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection(url,"root","1234");
                 Statement createCon = con.createStatement();
                 ResultSet rs;
@@ -80,6 +81,9 @@ public class Login {
             }
             catch (SQLException e) {
                 e.printStackTrace();
+            }
+            catch (ClassNotFoundException a) {
+                a.printStackTrace();
             }
         }
         else {
