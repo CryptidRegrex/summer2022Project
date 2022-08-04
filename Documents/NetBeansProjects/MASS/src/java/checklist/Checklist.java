@@ -19,7 +19,11 @@ public class Checklist {
     
     public static String[] checklistItems(String user, String day) {
         String[] workouts = new String[30];
-        try {
+        if (user == null || day == null) {
+            workouts[0] = "0";
+        }
+        else {
+            try {
             String url = "jdbc:mysql://localhost:3306/mass?allowPublicKeyRetrieval=true&useSSL=false";
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(url,"root","1234");
@@ -64,13 +68,15 @@ public class Checklist {
             }
             
             con.close();
+            }
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
+            catch (ClassNotFoundException a) {
+                a.printStackTrace();
+            }
         }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        catch (ClassNotFoundException a) {
-            a.printStackTrace();
-        }
+
         
         
         return workouts;

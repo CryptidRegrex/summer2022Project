@@ -94,6 +94,31 @@ public class ChecklistTests {
         String[] results = Checklist.checklistItems(user, day);
         assertEquals("0", results[0]);
     }
+    
+    @Test
+    public void nullDayAndUser() {
+        String user = null;
+        String day = null;
+        String[] results = Checklist.checklistItems(user, day);
+        assertEquals("0", results[0]);
+    }
+    
+    @Test
+    public void nullDayGoodUser() {
+        String user = "default";
+        String day = null;
+        String[] results = Checklist.checklistItems(user, day);
+        assertEquals("0", results[0]);
+    }
+    
+    @Test
+    public void goodDayNullUser() {
+        String user = null;
+        String day = "Monday";
+        String[] results = Checklist.checklistItems(user, day);
+        assertEquals("0", results[0]);
+    }
+    
     /*@BeforeClass
     public static void setUpClass() {
     }
