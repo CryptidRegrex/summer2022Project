@@ -29,7 +29,6 @@ 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
         <br>
         <h3>Navigation</h3>
         <ul>
-            <li><a href="week.jsp">Calendar</li>
             <li><a href="information.jsp">Information</li> 
         </ul>
     </body>

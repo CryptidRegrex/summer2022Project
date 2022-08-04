@@ -43,8 +43,8 @@
     <progress name="workoutProgress" id="workoutProgress" value="0" max="100" style="width:100%; height:100%"> </progress>
     <ul>
         <% for(String t: Calender.wNames(aWorkout)) { %>
-        <li><%=t%>
-            <%=i++%>
+        <li><%=i++%>
+            <%=t%>
         <input type="checkbox" id="complete<%=i%>" name="complete" class="prog">
         </li>
         <%}%>
@@ -79,7 +79,7 @@
             }
         }
     </script>
-    <input type="button" value="Update Progress" onclick="test()">
+    
     
     
     <head>
@@ -88,6 +88,14 @@
         <title>Checklist</title>
     </head>
     <body>
-        
+        <br>
+        <input type="button" value="Update Progress" onclick="test()">
+        <h3>Navigation</h2>
+        <ul>
+            <li><a href="home.jsp">Home</li> 
+            <li><a href="build.jsp">Build-A-Workout</li>
+            <li><a href="information.jsp">Information</li>
+            <li><a href="checklist.jsp">Checklist</li>
+        </ul>
     </body>
 </html>
