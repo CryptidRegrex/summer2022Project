@@ -94,7 +94,7 @@
      <h3>Navigation</h2>
         <ul>
             <li><a href="home.jsp">Home</li> 
-            <li><a href="build.jsp">Workout Builder</li>
-            <li><a href="calendar.jsp">Calendar</li>
+            <li><a href="build.jsp">Build-A-Workout</li>
+            <li><a href="checklist.jsp">Checklist</li>
         </ul>
 </html>

@@ -23,19 +23,77 @@ import checklist.Checklist;
  */
 public class ChecklistTests {
     
-
+    //NOTE This requires MySQL access to a precreated record
+    //If not established the test will not work
+    
+    @Test
+    public void checkReturnMondayDefaultUser() {
+        String user = "default";
+        String day = "Monday";
+        String[] results = Checklist.checklistItems(user, day);
+        assertEquals("1", results[0]);
+        assertEquals("8", results[1]);
+    }
+    
+    @Test
+    public void checkReturnTuesdayDefaultUser() {
+        String user = "default";
+        String day = "Tuesday";
+        String[] results = Checklist.checklistItems(user, day);
+        assertEquals("1", results[0]);
+        assertEquals("8", results[1]);
+    }
+    
+    @Test
+    public void checkReturnWednesdayDefaultUser() {
+        String user = "default";
+        String day = "Wednesday";
+        String[] results = Checklist.checklistItems(user, day);
+        assertEquals("1", results[0]);
+        assertEquals("8", results[1]);
+        assertEquals("11", results[2]);
+        assertEquals("12", results[3]);
+        assertEquals("14", results[4]);
+        assertEquals("16", results[5]);
+        assertEquals("22", results[6]);
+        assertEquals("24", results[7]);
+        assertEquals("27", results[8]);
+    }
+    
+    @Test
+    public void checkReturnThursdayDefaultUser() {
+        String user = "default";
+        String day = "Thursday";
+        String[] results = Checklist.checklistItems(user, day);
+        assertEquals("1", results[0]);
+    }
+    
     @Test
     public void checkReturnFridayDefaultUser() {
         String user = "default";
         String day = "Friday";
         String[] results = Checklist.checklistItems(user, day);
-        for (int i = 0; i < results.length; i++) {
-            System.out.println(results[i]);
-        }
         assertEquals("1", results[0]);
     }
-
     
+    @Test
+    public void checkReturnSaturdayDefaultUser() {
+        String user = "default";
+        String day = "Saturday";
+        String[] results = Checklist.checklistItems(user, day);
+        assertEquals("1", results[0]);
+        assertEquals("16", results[1]);
+        assertEquals("22", results[2]);
+    }
+    
+    
+    @Test
+    public void checkReturnSundayDefaultUser() {
+        String user = "default";
+        String day = "Sunday";
+        String[] results = Checklist.checklistItems(user, day);
+        assertEquals("0", results[0]);
+    }
     /*@BeforeClass
     public static void setUpClass() {
     }

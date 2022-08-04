@@ -26,5 +26,11 @@
             </select>
             <input type="submit">
         </form>
+        <h3>Navigation</h2>
+        <ul>
+            <li><a href="home.jsp">Home</li> 
+            <li><a href="information.jsp">Information</li>
+            <li><a href="build.jsp">Build-A-Workout</li>
+        </ul>
     </body>
 </html>
