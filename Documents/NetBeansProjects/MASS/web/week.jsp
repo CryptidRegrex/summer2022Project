@@ -10,16 +10,21 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <ul>
-<%                  Class.forName("com.mysql.cj.jdbc.Driver");
+    
+    
+<%                  
+    
+                    String user = (String)session.getAttribute("user"); 
+                    Class.forName("com.mysql.cj.jdbc.Driver");
                     //String url = "jdbc:mysql://localhost:3306/workouts?allowPublicKeyRetrieval=true&useSSL=false";
-
+                    
 
                     String url = "jdbc:mysql://localhost:3306/mass?allowPublicKeyRetrieval=true&useSSL=false";
                     Connection con = DriverManager.getConnection(url,"root","1234");
                     Statement createCon = con.createStatement();
 
                     ResultSet rs;
-                    String sch = "Select * FROM userworkouts WHERE userID='3'";
+                    String sch = "Select * FROM userworkouts Where userID='" + user + "'";
                     PreparedStatement sqlSch = con.prepareStatement(sch);
                     rs = sqlSch.executeQuery();
                     
@@ -33,7 +38,7 @@
                     
                     while(rs.next()){
                         if(!rs.getString(2).equals(null)){
-                            wForSun = rs.getString(2).split(",");
+                            wForThu = rs.getString(2).split(",");
                         }
                         if(!rs.getString(3).equals(null)){
                             wForMon = rs.getString(3).split(",");
@@ -57,6 +62,7 @@
                     }
                     
                     %>
+                    
                     <h3>Sunday</h3>
                     <% for(String t: Calender.wNames(wForSun)){ %>
                         <li><%=t%></li>

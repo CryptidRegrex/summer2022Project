@@ -70,8 +70,9 @@
         <ul>
             <li><a href="home.jsp">Home</li> 
             <li><a href="information.jsp">Information</li> 
-            <li><a href="build.jsp">Build A Workout</li>
+            <li><a href="build.jsp">Build-A-Workout</li>
             <li><a href="checklist.jsp">Checklist</li>
+            <li><a href="week.jsp">Calendar</li>
         </ul>1
     </body>   
 </html>

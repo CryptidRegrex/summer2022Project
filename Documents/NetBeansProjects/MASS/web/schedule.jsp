@@ -22,7 +22,7 @@
         public Object[] getNames(String [] workouts) {
             
             ArrayList<String> result = new ArrayList<String>();
-            result = calendar.Calendar.wNames(workouts);
+            result = Calender.wNames(workouts);
             return result.toArray();
         }    
     %>
@@ -38,8 +38,7 @@
         <h1>Schedule</h1>
         <c:redirect url="noResults.jsp"></c:redirect>
         <ul>
-            <%
-                String [] k2 = (String[])session.getAttribute("a");%>
+
             <%String [] g = request.getParameterValues("d");
             String[] testArray;
             
@@ -49,32 +48,16 @@
            <%testArray = request.getParameterValues("ids"); 
            
             
-            //System.out.print(testArray);
             if(testArray.length <= 0){%>
                 
                 <c:redirect url="noResults.jsp"></c:redirect>
                 
            <% }
-            else{
-                System.out.println("Hi");
-            }
+
             java.util.Calendar c = java.util.Calendar.getInstance();
-            
-            String [] test = new String[3];
-            int [] iTest = new int[3];
-            test = g[0].split("-");
-        
-            for(int i = 0; i < 3; i++){
-                iTest[i] = Integer.valueOf(test[i]);
-            }
-            
+                        
             c.clear();
-            c.set(iTest[0], iTest[1] - 1, iTest[2]);
-            String day = "Sun";
-           
-                Date d = new Date();
-                
-                
+            String day = "Sun";                                
                     
                     
                     int dOW = c.get(java.util.Calendar.DAY_OF_WEEK);
@@ -104,15 +87,11 @@
                         
                     }
                     
-                    //lines for Justin Kenney's version to run
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    //String url = "jdbc:mysql://localhost:3306/workouts?allowPublicKeyRetrieval=true&useSSL=false";
-
-
                     String url = "jdbc:mysql://localhost:3306/mass?allowPublicKeyRetrieval=true&useSSL=false";
                     Connection con = DriverManager.getConnection(url,"root","1234");
-                    Statement createCon = con.createStatement();
-
+                    con.createStatement();
+                    //Statement createCon = con.createStatement();
                     ResultSet rs;
                     String sqlquery;
                     PreparedStatement sqlSelect;
@@ -120,13 +99,7 @@
                     sqlquery = "UPDATE userworkouts SET " + day + " ='";
                     
                     String temp = " Where userID='" + user + "'";
- 
-
-                    
-                    
-                    
-            
-                    
+                  
                     String idString = "";
                     for(int i = 0; i < testArray.length; i++){
                         if(i == 0){
@@ -230,6 +203,7 @@
         <h3>Navigation</h2>
         <ul>
             <li><a href="home.jsp">Home</li> 
+            <li><a href="information.jsp">Information</li>
             <li><a href="build.jsp">Build-A-Workout</li>
             <li><a href="checklist.jsp">Checklist</li>
         </ul>

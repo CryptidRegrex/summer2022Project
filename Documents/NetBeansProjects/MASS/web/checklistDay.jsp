@@ -43,7 +43,7 @@
     <progress name="workoutProgress" id="workoutProgress" value="0" max="100" style="width:100%; height:100%"> </progress>
     <ul>
         <% for(String t: Calender.wNames(aWorkout)) { %>
-        <li><%=i++%>
+        <li><%i++;%>
             <%=t%>
         <input type="checkbox" id="complete<%=i%>" name="complete" class="prog">
         </li>
