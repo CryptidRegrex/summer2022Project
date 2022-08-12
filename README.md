@@ -24,3 +24,4 @@ Release Notes Milestone 4:
 JUnit tests were completed during this milestone and our automated Selenium tests.
 "Build-A-Workout" has had some touch ups and UI design changes.
 This is the final feature rich version of our work.
+To use this you will either need to create an account that will be saved to our database then once you login or create an account, you will be redirected to the Build-A-Workout page and then you will be able to select criteria to fit exercies to meet your desire. After that a list of generated exercises will be provided for the user to select and then add to a certain date on the calendar that corrolates with the day of a week. Once the user has done that they will see the exercises listed on the schedule. Finally, they user can come back at the time of their workout and use it to check off each workout completed with a progress bar indicating their progress. The user can rinse and repeat at their leisure. 
