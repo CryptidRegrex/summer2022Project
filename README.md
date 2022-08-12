@@ -19,3 +19,8 @@ JUnit tests have been added for the Checklist.java and Calender.java classes.
 The "build a workout has been fully fleshed out and the calender has been created with all features desired.
 Checklist has also been created with all features desired, but still needs some more test cases and UI formatting.
 Practical testing has been completed. 
+
+Release Notes Milestone 4: 
+JUnit tests were completed during this milestone and our automated Selenium tests.
+"Build-A-Workout" has had some touch ups and UI design changes.
+This is the final feature rich version of our work.
