@@ -56,7 +56,18 @@
 
             java.util.Calendar c = java.util.Calendar.getInstance();
                         
+            String [] test = new String[3];
+            int [] iTest = new int[3];
+            test = g[0].split("-");
+        
+            for(int i = 0; i < 3; i++){
+                iTest[i] = Integer.valueOf(test[i]);
+            }
+            
+                        
             c.clear();
+            c.set(iTest[0], iTest[1] - 1, iTest[2]);
+
             String day = "Sun";                                
                     
                     

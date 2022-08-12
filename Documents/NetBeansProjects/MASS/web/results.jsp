@@ -57,10 +57,17 @@
         <%if(workFields.length == 0){%>
         <c:redirect url="noResults.jsp"></c:redirect>
         <%}else{%>
-        <form action="calendar2.jsp" method="get">
+        <form action="schedule.jsp" method="get">
             <ul>
+    <label for="d">Date: </label>
+            <input type="date" name="d" min="<%=java.time.LocalDate.now()%>" required/>
+
             <%for(int j = 0; j < workFields.length/5; j++){%>
-            <li><%=workFields[j]%></li>
+            
+            <li>
+                <input type="text" name="e" value="<%=workFields[j]%>" disabled/>
+                <input type="checkbox" name="ids" id="checks<%=j%>" value="<%=wIds[j]%>" />
+            </li>
             <%}%>
             </ul>
         <%}%>
@@ -73,6 +80,13 @@
             <li><a href="build.jsp">Build-A-Workout</li>
             <li><a href="checklist.jsp">Checklist</li>
             <li><a href="week.jsp">Calendar</li>
-        </ul>1
+        </ul>
     </body>   
 </html>
+
+
+
+
+
+
+
