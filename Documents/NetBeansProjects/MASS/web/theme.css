@@ -10,7 +10,8 @@ body
     text-align: center;
     margin: auto;
     opacity: 90%;
-    width: 80%;
+    width: 100%vw
+    height: 100%vh;
 }
 
 h1
@@ -22,7 +23,7 @@ h1
 
 h2
 {
-    background-color: burlywood; 
+    background-color: burlywood;
     border: 5px solid;
     border-color: darkslategray;
 }
